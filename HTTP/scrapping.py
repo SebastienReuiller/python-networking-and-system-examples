@@ -12,7 +12,7 @@ def _main():
     response = requests.get(URL)
     
     # parse le HTML
-    html = BeautifulSoup(response.text, 'html.parser')
+    html = BeautifulSoup(response.content, 'html.parser')
 
     # Extrait les alertes
     alerts_html = html.find_all('div', class_="cert-alert")
